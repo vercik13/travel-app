@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-export default function Form({ onAddItems }) {
+const Form = ({ onAddItems }) => {
   const [description, setDescription] = useState("");
   const [quantity, setQuantity] = useState(1);
 
-  function handleSubmit(e) {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     if (!description) return;
@@ -16,7 +16,7 @@ export default function Form({ onAddItems }) {
 
     setDescription("");
     setQuantity(1);
-  }
+  };
 
   return (
     <form className="add-form" onSubmit={handleSubmit}>
@@ -40,4 +40,6 @@ export default function Form({ onAddItems }) {
       <button>Add</button>
     </form>
   );
-}
+};
+
+export default Form;
